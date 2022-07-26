@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question 3</h1>
+</body>
+<script>
+
+    //   function partition(arr,l,r){
+         
+    //       let x=arr[r];
+    //       let i=l;
+
+    //      for(j=l;j<=r-1;j++){
+            
+    //         if(arr[j]<=x){
+             
+    //               let temp=arr[i];
+    //               arr[i]=arr[j];
+    //               arr[j]=temp;
+    //               i++;
+    //         }
+            
+    //        }
+
+    //        let temp=arr[i];
+    //        arr[i]=arr[r];
+    //        arr[r]=temp;
+           
+    //        return i;
+
+    //   }
+
+    //    function quickSort(arr,l,r,k){                   
+            
+    //           if(k>0 && k<=r-l+1){
+    //             let pos=partition(arr,l,r); 
+
+    //              if(pos-l==k-1){
+    //               return arr[pos];   
+    //              }
+
+
+    //             else if(k-1<pos-l){
+    //             return quickSort(arr,l,pos-1,k);
+    //             }
+
+    //             else if(k-1>pos-l){
+    //             return quickSort(arr,pos+1,r,k-pos+l-1); 
+    //         }
+
+    //     }
+    //     return Number.MAX_VALUE;
+    // } 
+
+       
+    //    var arr=[ 12, 3, 5, 7, 4, 19, 26 ];
+    //    var k=3;
+    //    let r=arr.length-1; 
+    //    let l=0;
+    //    let part=partition(arr,l,r);
+    //    console.log(part);
+    //    let ans=quickSort(arr,l,r,k);
+    //    console.log(ans);
+
+   
+    // function quick(arr,l,r){    
+    //     let i=l;
+    //    let pivot=arr[r];
+
+
+    //     for(j=l;j<=r-1;j++){
+
+    //        if(arr[j]<=pivot){
+
+    //            let temp=arr[i];
+    //            arr[i]=arr[j];
+    //            arr[j]=temp;
+    //            i++;
+    //        }
+    //     }
+
+    //    let temp=arr[i];
+    //        arr[i]=arr[r];
+    //        arr[r]=temp;
+    //        return i;
+
+    // }
+
+    // function partition(arr,l,r,k){
+        
+    //     if(k>0 && k<=r-l+1){
+
+    //      let pos=quick(arr,l,r);
+
+    //      if(k-1==pos-l){
+    //         return arr[pos];
+    //      }
+    //      else if(pos-l>k-1){
+    //       return partition(arr,l,pos-1,k);
+    //      }
+
+    //      else if(pos-l<k-1){
+    //       return partition(arr, pos + 1, r,k - pos + l - 1);
+    //      }
+
+    //     }
+    //     return Number.MAX_VALUE; 
+    // }
+
+    // var arr=[ 12, 3, 5, 7, 4, 19, 26 ];
+    //    var k=3;
+    //    let r=arr.length-1; 
+    //    let l=0;
+    //    let part=partition(arr,l,r,k);
+    //    console.log(part);
+ </script>   
+</html>

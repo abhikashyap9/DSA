@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+// function mergeSort(array,low,mid,high){
+    
+//     let n1=mid-low+1;
+//     let n2=high-mid;
+    
+//     let array1=new Array(n1);
+//     let array2=new Array(n2);
+
+//     for(let i=0;i<n1;i++){
+//        array1[i]=array[low+i]; 
+//     }
+
+//     for(let j=0;j<n2;j++){
+//        array2[j]=array[mid+j];
+//     }
+
+//     let i=0;
+//     let j=0;
+//     let k=low;  //?
+
+//     while(i<n1 && j<n2){
+
+//       if(array1[i]>=array2[j]){
+//           array[k]=array2[j];
+//           j++;     
+//       }
+//       else{
+//          array[k]=array1[i];
+//          i++;
+//       }     
+//       k++;
+//     }
+
+//     while(i<n1 && j<n2){
+
+//        if(array1[i]>=array2[j]){
+//          array[k]=array2[j];
+//          i++;
+//        }
+
+//        else if(array1[i]<=array2[j]){
+//          array[k]=array2[j];
+//          j++;
+//        }
+
+//        k++;
+//     }
+
+// }
+
+// function recursion(array,low,high){
+    
+//    if(low>=high){
+//         return;
+//     }
+
+//     let mid=low+Math.floor((high-low)/2);
+
+//      recursion(array,low,mid);
+//      recursion(array,mid+1,high);
+//      mergeSort(array,low,mid,high);
+// }
+
+// let array=[2,3,4,1,5];
+// let n=array.length-1;
+
+
+// function callTheArray(array,low,high){   
+//    for(i=0;i<=n;i++){
+//    console.log(array[i]);
+//    }
+// }
+// recursion(array,0,n);
+// callTheArray(array,0,n);
+
+
+
+let array=[2,3,4,1,5];
+let n=array.length-1;
+
+function mergingSort(array,low,mid,high){
+
+   let n1=mid-low+1;
+   let n2=high-mid;
+
+   let L=new Array(n1);
+   let R=new Array(n2);
+
+   for(let f=0;f<n1;f++){      
+      L[f]=array[f+low];
+   }
+
+   for(let s=0;s<n2;s++){
+     R[s]=array[mid+1+s];
+   }
+   
+  let i=0;
+  let j=0;
+  let k=low;
+       
+   while(i<n1 && j<n2){
+     
+    if(L[i]>=R[j]){
+     array[k]=R[j];
+     j++;
+     k++;         
+   }
+   
+   else if(L[i]<=R[j]){
+    array[k]=L[i];
+    i++;
+    k++;
+   }
+  }
+
+  while(i<n1){    
+   
+    array[k]=L[i];
+    i++;
+    k++;
+   
+  }
+
+  while(j<n2){
+   
+     array[k]=R[j];
+     j++;
+     k++;         
+   
+  }
+
+}
+
+function mergeSort(array,low,high){
+   
+   if(low>=high){
+      return;
+   }
+
+   let mid=low+Math.floor((high-low)/2);
+
+   mergeSort(array,low,mid);
+   mergeSort(array,mid+1,high);
+   mergingSort(array,low,mid,high);
+}
+mergeSort(array,0,n);
+
+function printSort(array,n){
+   
+   for(i=0;i<=n;i++){
+      console.log(array[i]);
+   }
+
+}
+
+printSort(array,n);
+
+</script>

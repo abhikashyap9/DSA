@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let arr=[12, -1, -7, 8, -15, 30, 16, 28];
+    // let n=arr.length-1;
+    // let k=3;
+    
+    // let x=negativeinWindowSize(arr,n,k);
+    // console.log(x);  
+    // function negativeinWindowSize(arrs,n,k){
+        
+    //     let i=0;
+    //     let j=0;
+    //     let empty=[];
+    //     let minVal=0;
+    //     let minFromThem=0;
+        
+        
+    //     while(j<=n){
+
+    //         if(j-i+1<k){
+    //           console.log('one time');  
+    //           j++;
+    //         }
+
+    //     else if(j-i+1===k){ 
+    //         if(arr[i]<0){
+    //           i++;
+    //         }
+    //      minVal=Math.min(arr[i],arr[j]);
+    //      minFromThem=Math.min(0,minVal);
+    //      empty.push(minFromThem);
+    //      i++;
+    //      j++;
+    //     } 
+    //     }
+    //     return empty;
+    // }
+
+
+    function printFirstNegativeInteger(arr , n , k)
+    {
+        // A Double Ended Queue, Di that will
+        // store indexes of useful array elements
+        // for the current window of size k.
+        // The useful elements are all negative integers.
+        var Di = []; 
+        // Process first k (or first window)
+        // elements of array
+        var i;
+        for (i = 0; i < k; i++)
+            // Add current element at the rear of Di
+            // if it is a negative integer
+            if (arr[i] < 0)
+                Di.push(i);
+        // Process rest of the elements,
+        // i.e., from arr[k] to arr[n-1]
+        for (; i < n; i++) {
+            // if Di is not empty then the element
+            // at the front of the queue is the first
+            // negative integer of the previous window
+            if (Di.length!==0)
+                document.write(arr[Di[0]] + " ");
+ 
+            // else the window does not have a
+            // negative integer
+            else
+                document.write("0" + " ");
+            while ((Di.length!==0) && Di[0] < (i - k + 1))
+                Di.shift(); // Remove from front of queue 
+            // Add current element at the rear of Di
+            // if it is a negative integer
+            if (arr[i] < 0)
+                Di.push(i);
+        } 
+        // Print the first negative
+        // integer of last window
+        if (Di.length !== 0)
+            document.write(arr[Di[0]] + " ");
+        else
+            document.write("0" + " ");
+    } 
+    // Driver Code
+     
+        var arr = [ 12, -1, -7, 8, -15, 30, 16, 28 ];
+        var n = arr.length;
+        var k = 3;
+        printFirstNegativeInteger(arr, n, k);
+</script>
+</html>

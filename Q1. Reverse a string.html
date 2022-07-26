@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// let arr='Abhishek'
+// let n=arr.length-1;
+// let i;
+// let array=[];
+// for(i=n;i>=0;i--){
+//     array.push(arr[i]);
+// console.log(array);
+
+// }
+
+// 
+
+function reverseArray(arr,a,b){
+    while(a<b){
+    let temp=arr[a];
+     arr[a]=arr[b];
+     arr[b]=temp;
+     a++;
+     b--
+    }
+}
+function printArray(arr,n){
+    for(i=0;i<n;i++){
+        console.log(arr[i]);
+    }
+}
+
+function main(){
+let arr='geeks';
+ let n=arr.length;
+ 
+ reverseArray(arr,0,n-1)
+ 
+ printArray(arr,n);
+
+ }
+main()
+</script>
+</html>

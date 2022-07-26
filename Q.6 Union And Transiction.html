@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function unionAndTransiction(arr1, arr2, n, x) {
+    //     let count = 0;
+
+    //     console.log(count);
+
+    //      for(i=0;i<n;i++){
+
+
+    //      }
+    //      for(j=0;j<x;j++){ 
+    //          if(arr1[i]==arr2[j]){
+    //            count++;
+    //          }
+    //          else if(arr1[i]!=arr2[j]){
+    //              count++;
+    //          }
+    //         }
+
+
+
+    //     return count;
+    // }
+
+    // let arr1 = [85, 25, 1, 32, 54, 6];
+    // let arr2 = [85, 2];
+
+
+    // let n = arr1.length - 1;
+    // let x = arr2.length - 1;
+    // let z = unionAndTransiction(arr1, arr2, n, x);
+    // console.log(z);
+
+
+
+    // let arr1=[1,2,3,4,5,6];
+    // let arr2=[3,5,10,15,20];
+    // let n=arr1.length;
+    // let m=arr2.length;
+    // loop(arr1,arr2,n,m);
+
+
+    // function loop(arr1,arr2,n,m){
+    //     let i=0;
+    //     let j=0;
+    //     let count=0;
+    //     while(i<n && j<m){
+    //        if(arr1[i]<arr2[j]){
+    //            document.write(arr1[i++]+' ');
+    //            count++;
+    //        }
+    //        else if(arr2[j]<arr1[i]){
+    //         document.write(arr2[j++] +' ');
+    //         count++
+    //        }
+    //        else{
+    //            document.write(arr2[j++]+' ');
+    //            i++
+    //            count++
+    //        }                   
+    //     }
+
+    //     while(i<n){
+
+    //         document.write(arr1[i++] +' ');
+    //         count++
+    //     }
+
+    //     while(j<m){
+    //         document.write(arr2[j++]+' ');
+    //         count++;
+    //     }
+    //     console.log(count);
+
+    // }
+
+
+   
+    
+ 
+
+    // function fromFirstArray(arr1, n) {
+    //     let i = 0;
+    //     let myarray = [];
+           
+    //     while (i <= n ) {
+
+    //         if (arr1[i] < arr1[i + 1]){
+    //             myarray.push(arr1[i]);
+    //             i++;
+    //         }
+    //         else if (arr1[i] == arr1[i + 1]) {
+    //             i++;
+    //         }
+    //         else{
+    //             myarray.push(arr1[i]);
+    //             i++;
+    //         }
+
+    //         // if(arr2[j]<arr2[]){
+
+    //         // }
+    //         // else if (arr2[j] < arr2[j + 1]){
+    //         //     return arr2[j];
+    //         //     j++;
+    //         // }
+
+    //         // else if(arr2[j] == arr2[j + 1]){
+    //         //     j++;
+    //         // }
+
+            
+    //     }
+        
+    //     return myarray;
+    // }
+
+    // function secondArray(arr2, m) {
+
+    //     let j = 0;
+    //     let myNewArray=[];
+
+
+    //     while (j <=m) {
+
+    //         if (arr2[j] < arr2[j + 1]) {
+    //             myNewArray.push(arr2[j]);
+    //             j++;
+    //         }
+
+    //         else if (arr2[j] == arr2[j + 1]) {
+    //             j++;
+    //         }
+    //         else{
+    //             myNewArray.push(arr2[j]);
+    //             j++;
+    //         }
+
+    //     }
+
+    //     return myNewArray;
+    // }
+
+  
+
+    // function unionAndTransaction(arr1,arr2,n,m){
+          
+        
+    //       let x=fromFirstArray(arr1,n);
+    //       let y = secondArray(arr2, m);   
+    //       console.log(x);
+    //       console.log(y);
+          
+    //       let lOFA=x.length;
+    //       let lOSA=y.length;
+          
+    //       let start1=0;
+    //       let start2=0;
+
+    //     console.log(lOFA);
+    //     console.log(lOSA);
+
+    //     while(start1<lOFA && start2<lOSA){
+            
+    //         if(x[start1]<y[start2]){
+    //             document.write(x[start1] +" ");
+    //             start1++; 
+    //          }
+
+    //         else if(y[start2]<x[start1]){
+    //         document.write(y[start2] +" ");
+    //         start2++;
+    //         }
+
+    //         else{
+    //             document.write(x[start1++]+" ");
+    //             start2++
+    //          }
+              
+             
+    //     }
+
+    //     while(start1<lOFA){
+    //         document.write(x[start1++]+" ");
+    //     }
+    //     while(start2<lOSA){
+    //        document.write(y[start2++]+" ");
+    //     }
+    // }
+   
+    // let arr1 = [1, 2, 2, 3, 4, 5];
+    // let arr2 = [4, 6, 8, 9,10];
+    // let n=arr1.length-1;
+    // let m=arr2.length-1;
+
+    // unionAndTransaction(arr1,arr2,n,m);
+    
+    function UnionArray(arr1 , arr2) {
+        // Taking max element present in either array
+        var m = arr1[arr1.length - 1];
+        var n = arr2[arr2.length - 1];
+ 
+        var ans = 0;
+ 
+        if (m > n) {
+            ans = m;
+        } else
+            ans = n;
+ 
+        // Finding elements from 1st array
+        // (non duplicates only). Using
+        // another array for storing union
+        // elements of both arrays
+        // Assuming max element present
+        // in array is not more than 10^7
+        var newtable = Array(ans+1).fill(0);
+ 
+        // First element is always
+        // present in final answer
+        document.write(arr1[0] + " ");
+ 
+        // Incrementing the First element's count
+        // in it's corresponding index in newtable
+        newtable[arr1[0]]+=1;
+ 
+        // Starting traversing the first
+        // array from 1st index till last
+        for (var i = 1; i < arr1.length; i++) {
+            // Checking whether current element
+            // is not equal to it's previous element
+            if (arr1[i] != arr1[i - 1]) {
+                document.write(arr1[i] + " ");
+                newtable[arr1[i]]+= 1;
+            }
+        }
+ 
+        // Finding only non common
+        // elements from 2nd array
+        for (var j = 0; j < arr2.length; j++) {
+            // By checking whether it's already
+            // present in newtable or not
+            if (newtable[arr2[j]] == 0) {
+                document.write(arr2[j] + " ");
+                ++newtable[arr2[j]];
+            }
+        }
+    }
+ 
+    // Driver Code
+        var arr1 = [ 1, 2, 2, 2, 3 ];
+        var arr2 = [ 2, 3, 4, 5 ];
+ 
+        UnionArray(arr1, arr2);
+
+</script>
+
+</html>

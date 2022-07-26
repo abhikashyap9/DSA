@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function swap(arr,n){
+
+            let temp=arr[0];
+            arr[0]=arr[n];
+            arr[n]=temp;
+
+    }
+
+    function abc(arr,n){
+
+        swap(arr,n);
+        
+        for(i=0;i<arr.length;i++){
+           
+         console.log(arr[i]);
+        }
+   
+    }
+
+//    function swapping(arr,n){
+//        for(i=0;i<n;i++){
+//            console.log(arr[i]);
+//        }
+//    } 
+    let arr=[9, 8, 7, 6, 4, 2, 1, 3];
+
+    let n=arr.length-1;
+
+    abc(arr,n);
+    // abc(arr,n);
+    // console.log(x);
+    // swapping(arr,n);
+
+    // console.log(x);
+
+</script>
+</html>

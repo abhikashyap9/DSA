@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function exchange(arr,n){
+    
+      let low=0;
+      let mid=0;
+      let high=n-1;
+
+      while(mid<high){
+
+        if(arr[mid]==0){
+
+           let temp=arr[mid];
+           arr[mid]=arr[low];
+           arr[low]=temp;
+           low++;
+           mid++;
+        
+        }
+        else if(arr[mid]==1){
+           mid++;
+        }
+        else{
+           let temp=arr[mid];
+           arr[mid]=arr[high];
+           arr[high]=temp;
+           mid++;
+           high--;
+        }
+      }
+
+    }
+
+    function printArray(arr,n){
+
+      for(i=0;i<n;i++){
+          document.write(arr[i]);
+      }
+    
+    }
+   
+    let arr=[0,2,1,2,0];
+    let n=arr.length;
+    exchange(arr,n);
+    printArray(arr,n)
+
+
+
+    </script>
+</html>

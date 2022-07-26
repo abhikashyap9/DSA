@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr=[3,1,2];
+    let n=arr.length-1;
+
+    function merge(arr,low,mid,high){
+        
+        let leftArray=[];
+        for(let i=low;i<mid+1;i++){
+          leftArray.push(arr[i]);
+        }
+
+        let rightArray=[];
+
+        for(let j=mid+1;j<high+1;j++){
+         rightArray.push(arr[j]);
+        }
+
+        let f=0,s=0,k=low,swap=0;
+
+        while(f<leftArray.length && s<rightArray.length){
+            if(leftArray[f]>=rightArray[s]){
+             arr[k]=rightArray[s];
+             k++
+             s++;
+             swap+=(mid+1)-(f+low); 
+            }
+            else{
+               arr[k]=leftArray[f];
+               k++;
+               f++;
+                
+            }   
+        }
+
+        while(f<leftArray.length){
+         arr[k]=leftArray[f];
+         k++;
+         f++  
+        }
+
+        while(s<rightArray.length){
+         arr[k]=rightArray[s];
+         k++;
+         s++;
+        }
+
+        return swap;
+
+    }
+
+function mergeSort(arr,low,high){
+    let count=0;
+    
+    if(low<high){
+    let mid=low+Math.floor((high-low)/2);
+    
+    count+=mergeSort(arr,low,mid);
+    count+=mergeSort(arr,mid+1,high);
+    count+=merge(arr,low,mid,high);
+    }
+    return count;
+
+    }
+
+    let counts=mergeSort(arr,0,n);
+    console.log(counts);
+
+</script>
+</html>
